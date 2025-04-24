@@ -65,16 +65,12 @@
             (if (empty? seznam) 0 (+ (first seznam) (sum (rest seznam))))
             ]
           [define (avg seznam)
-            (/ (sum seznam) (length seznam))
+            (/ (sum seznam) (max (length seznam) 1))
             ]
-          )
-    
-    (avg (filter isNonZero?
-     (map
-      (lambda (z) (najdiCenuProduktu Nazev (obchod-cenik z)))
-      Obchody)
-     )
-    ))
+          )+
+   
+    (avg (filter isNonZero? (map (lambda (z) (najdiCenuProduktu Nazev (obchod-cenik z))) Obchody)))
+    )
   )
 
 (prumernaCena "Mouka hladká" test)
