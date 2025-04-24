@@ -1,0 +1,17 @@
+#lang racket
+
+(define-struct obchod (nazev cenik))
+(define-struct zbozi (nazev cena))
+
+
+(define test (list 
+(make-obchod "Billa" 
+(list (make-zbozi "Mouka hladká" 12)
+(make-zbozi "Mattoni" 15)
+(make-zbozi "Chléb Horal" 27))) 
+(make-obchod "Lidl"
+(list (make-zbozi "Rohlík" 3)
+(make-zbozi "Mouka hladká" 10)))
+(make-obchod "Tesco"
+(list (make-zbozi "Mattoni" 15)
+(make-zbozi "Chléb Horal" 25)))))
