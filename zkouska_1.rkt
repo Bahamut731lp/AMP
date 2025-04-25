@@ -38,7 +38,7 @@
       [define (najdi-v-oddeleni jmeno seznam-zamestnancu)
         (cond
           [(empty? seznam-zamestnancu) #f]
-          [(string=? jmeno (first seznam-zamestnancu)) #t]
+          [(equal? jmeno (first seznam-zamestnancu)) #t]
           [else (najdi-v-oddeleni jmeno (rest seznam-zamestnancu))]
          )
       ]
@@ -56,3 +56,5 @@
 (hledej-oddeleni "Lenka Zelená" podnik)
 (hledej-oddeleni "Lenka Růžová" podnik)
 
+; Příklald fold left
+(foldl (lambda (value result) (+ value result)) 0 '(1 2 3 4 5))
